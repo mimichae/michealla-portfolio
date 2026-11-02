@@ -167,7 +167,8 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
             <mesh geometry={geometry}>
               {/* box faces: +x, -x, +y, -y, front, back */}
               {[0, 1, 2, 3].map((i) => <meshStandardMaterial key={i} attach={`material-${i}`} color="#e9e7f2" roughness={0.4} />)}
-              <meshStandardMaterial attach="material-4" map={front} color={front ? "#ffffff" : "#e9e7f2"} roughness={0.55} />
+              {/* key forces a fresh material once the photo loads: three.js won't pick up a map added to an existing material */}
+              <meshStandardMaterial key={front ? "photo" : "blank"} attach="material-4" map={front} color={front ? "#ffffff" : "#e9e7f2"} roughness={0.55} />
               <meshStandardMaterial attach="material-5" map={back} roughness={0.55} />
             </mesh>
             {/* metal clip */}
