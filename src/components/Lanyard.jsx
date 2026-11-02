@@ -23,6 +23,12 @@ function cardFront(img) {
   const s = Math.max(fw / img.width, fh / img.height);
   g.drawImage(img, fx + (fw - img.width * s) / 2, fy + (fh - img.height * s) / 3, img.width * s, img.height * s);
   g.restore();
+  // thin frame so a white-background photo doesn't melt into the white card
+  g.strokeStyle = "#dcd9e8";
+  g.lineWidth = 4;
+  g.beginPath();
+  g.roundRect(fx, fy, fw, fh, r);
+  g.stroke();
   g.fillStyle = "#14121f";
   g.font = "700 64px 'Bricolage Grotesque', sans-serif";
   g.fillText(`${profile.first} ${profile.last}`, 60, 925);
