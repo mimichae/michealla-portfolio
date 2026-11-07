@@ -10,4 +10,4 @@ npm run dev      # http://localhost:5173
 npm run build    # static site in ./dist
 ```
 
-Content lives in `src/data.js`; her photo is `public/michealla.jpg`. Pushing to `main` deploys to GitHub Pages through `.github/workflows/deploy.yml` (set **Settings → Pages → Source** to **GitHub Actions**). 
+Content lives in `src/data.js`; her photo is `public/michealla.jpg`. Pushing to `main` deploys to GitHub Pages through `.github/workflows/deploy.yml` (set **Settings → Pages → Source** to **GitHub Actions**).
